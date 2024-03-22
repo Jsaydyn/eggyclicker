@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FREE ME FROM THIS HELL</h1>
+    <h1> Egg clicks:</h1>
+    <h1 id = "flip">0</h1>
+    <button onclick = "add()">
+    <img src ="https://i.redd.it/npehfcm6t7031.jpg">
+    </button>
+
+    <br><br>
+    <button id ="money" onclick = "double()">
+    <p>double output</p> <br>   <p>cost:</p><br> <p id = cost>100</p>
+        </button>
+</body>
+</html>
+
+<style>
+    img {
+        width: 100px;
+        height: 100px;
+    }
+
+    button {
+        padding: 50px;
+    }
+
+    #money {
+        padding: 5px;
+    }
+</style>
+<script>
+    var egg = 0
+    var cost = 100;
+    var increase =1;
+    function add() {
+        egg+=increase;
+        document.getElementById("flip").innerHTML=egg;
+    }
+
+    function double() {
+        if (egg >= cost) {
+            egg-=cost;
+            cost*=2;
+            increase*=2;
+            
+            document.getElementById("cost").innerHTML=cost;
+            document.getElementById("flip").innerHTML=egg;
+        }
+
+    }
+</script>
