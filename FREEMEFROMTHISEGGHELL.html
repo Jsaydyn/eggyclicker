@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>FREE ME FROM THIS HELL</h1>
-    <h1> Amount of eggs:</h1>
+    <h1> Egg clicks:</h1>
     <h1 id = "flip">0</h1>
     <button onclick = "add()">
     <img src ="https://i.redd.it/npehfcm6t7031.jpg">
@@ -17,6 +17,26 @@
     <button id ="money" onclick = "double()">
     <p>double output</p> <br>   <p>cost:</p><br> <p id = cost>100</p>
         </button>
+
+        <button id ="money" onclick = "chicken()">
+        <p>chicken (4 egg/sec)</p> <br>   <p>cost:</p><br> <p id = cost1>200</p>
+            </button>
+
+        <button id ="money" onclick = "ostritch()">
+                <p>ostritch (8 egg/sec)</p> <br>   <p>cost:</p><br> <p id = cost2>800</p>
+                    </button>
+
+        <button id ="money" onclick = "emu()">
+                        <p>emu (16 egg/sec)</p> <br>   <p>cost:</p><br> <p id = cost3>1600</p>
+                            </button>
+
+                            <button id ="money" onclick = "eggtemis()">
+                                <p>eggtemis, king of eggs (32 egg/sec)</p> <br>   <p>cost:</p><br> <p id = cost4>3200</p>
+                                    </button>
+
+                                    <button id ="money" onclick = "eggulous()">
+                                        <p>eggulous, god of eggs (64 egg/sec)</p> <br>   <p>cost:</p><br> <p id = "cost5">6400</p>
+                                            </button>
 </body>
 </html>
 
@@ -37,7 +57,17 @@
 <script>
     var egg = 0
     var cost = 100;
+    var cost1 = 200;
+    var cost2 = 800;
+    var cost3 = 1600;
+    var cost4 = 3200;
+    var cost5 = 6400;
     var increase =1;
+    var increase1 =1;
+    var increase2 =4;
+    var increase3 =8;
+    var increase4 =16;
+    var increase4 =32;
     function add() {
         egg+=increase;
         document.getElementById("flip").innerHTML=egg;
@@ -52,6 +82,136 @@
             document.getElementById("cost").innerHTML=cost;
             document.getElementById("flip").innerHTML=egg;
         }
+
+    }
+    function chicken() {
+        if (egg >= cost1) {
+            increase1*=2;
+            egg-=cost1;
+            chickenmaker();
+            document.getElementById("flip").innerHTML=egg;
+
+
+
+            setTimeout(function () {
+            cost1*=2;
+            document.getElementById("cost1").innerHTML=cost1;
+
+        }, 500);
+        }
+    }
+
+    function chickenmaker() {
+        egg+=increase1;
+            setTimeout(function () {
+            chickenmaker();
+            document.getElementById("flip").innerHTML=egg;
+
+        }, 500);
+
+    }
+
+    function ostritch() {
+        if (egg >= cost2) {
+            egg-=cost2;
+            increase2*=2;
+            ostritchmaker();
+            document.getElementById("flip").innerHTML=egg;
+
+
+            setTimeout(function () {
+            cost2*=2;
+            document.getElementById("cost2").innerHTML=cost2;
+
+        }, 500);
+        }
+    }
+
+    function ostritchmaker() {
+        egg+=increase2;
+            setTimeout(function () {
+            ostritchmaker();
+            document.getElementById("flip").innerHTML=egg;
+
+        }, 500);
+
+    }
+
+    function emu() {
+        if (egg >= cost3) {
+            egg-=cost3;
+            increase3*=2;
+            ostritchmaker();
+            document.getElementById("flip").innerHTML=egg;
+
+
+            setTimeout(function () {
+            cost3*=2;
+            document.getElementById("cost3").innerHTML=cost3;
+
+        }, 500);
+        }
+    }
+
+    function emumaker() {
+        egg+=increase3;
+            setTimeout(function () {
+            emumaker();
+            document.getElementById("flip").innerHTML=egg;
+
+        }, 500);
+
+    }
+
+    function eggtemis() {
+        if (egg >= cost4) {
+            egg-=cost4;
+            increase4*=2;
+            temismaker();
+            document.getElementById("flip").innerHTML=egg;
+
+
+            setTimeout(function () {
+            cost4*=2;
+            document.getElementById("cost4").innerHTML=cost4;
+
+        }, 500);
+        }
+    }
+
+    function temismaker() {
+        egg+=increase4;
+            setTimeout(function () {
+            temismaker();
+            document.getElementById("flip").innerHTML=egg;
+
+        }, 500);
+
+    }
+
+    function eggulous() {
+        if (egg >= cost5) {
+            egg-=cost5;
+            increase5*=2;
+            gulousmaker();
+            document.getElementById("flip").innerHTML=egg;
+
+
+            setTimeout(function () {
+            cost5*=2;
+            document.getElementById("cost5").innerHTML=cost5;
+
+        }, 500);
+        }
+    }
+
+    function gulousmaker() {
+        egg+=increase5;
+            setTimeout(function () {
+            gulousmaker();
+            document.getElementById("flip").innerHTML=egg;
+
+        }, 500);
 
     }
 </script>
